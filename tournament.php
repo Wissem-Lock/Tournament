@@ -18,10 +18,6 @@
 <?php include 'navbar.php' ?>
 
 
-<?php $query_games = $pdo->query("SELECT * FROM games");
-$show_games = $query_games->fetchAll(PDO::FETCH_ASSOC);
-?>
-
 <section id="detail-tournament">
 
     <div class="description-tournament">
@@ -30,46 +26,47 @@ $show_games = $query_games->fetchAll(PDO::FETCH_ASSOC);
 
         <?php
         if(!empty($_SESSION['name'])) { ?>
-        <button class="inscription">S'inscrire</button>
- <?php }
+                <form method="POST" action="inscription_tournament.php?game=<?= $_GET['game']?>&number=<?= $_GET['number'] ?>">
+                    <input class="inscrire" type="submit" value="S'inscrire">
+                </form>
+       <?php }
 ?>
     </div>
 
     <div class="session-tournament">
         <h1>Tournoi du xx/xx/xxxx</h1>
-
         <div class="arbre">
-            <div class="left">
-                <div class="input">
-                    <p>Vide</p>
-                    <p>Vide</p>
-                </div>
-                <div class="input">
-                    <p>Vide</p>
-                    <p>Vide</p>
-                </div>
-                <div class="input">
-                    <p>Vide</p>
-                    <p>Vide</p>
-                </div>
+ <?php
+ $game_id = $_GET['number'];
+        $game_name = $_GET['game'];
+
+
+        // Récupère toutes les données dans la table inscription
+        $query_inscription = $pdo->prepare("SELECT * from inscription WHERE id_games = :id");
+        $query_inscription->bindParam('id',$game_id, PDO::PARAM_INT);
+        $query_inscription->execute();
+        $inscrits = $query_inscription->fetchAll(PDO::FETCH_ASSOC);
+
+        // Pour chaque inscrit dans la table inscription , récupère leurs nom dans la table team
+        foreach ($inscrits as $inscrit):
+
+        $query_inscrits = $pdo->prepare("SELECT team.name FROM team WHERE id_team = :id_inscrit");
+        $query_inscrits->bindParam('id_inscrit', $inscrit['id_team'], PDO::PARAM_INT);
+        $query_inscrits->execute();
+        $valide = $query_inscrits->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($valide as $valid): ?>
+
+            <div class="branche">
+                <?= $valid['name']; ?>
             </div>
 
-            <div class="right">
-                <div class="input">
-                    <p>Vide</p>
-                    <p>Vide</p>
-                </div>
-                <div class="input">
-                    <p>Vide</p>
-                    <p>Vide</p>
-                </div>
-                <div class="input">
-                    <p>Vide</p>
-                    <p>Vide</p>
-                </div>
-            </div>
+
+        <?php endforeach;
+
+endforeach;
+?>
         </div>
-    </div>
+
 
 
 </section>

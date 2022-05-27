@@ -50,19 +50,6 @@ endforeach;
     <div class="bloc-information">
         <div class="information">
             <h1>Profil</h1>
-            <div class="modif-profil">
-
-                <div class="mdp">
-                    <p>Modifier son mot de passe</p>
-                    <p>logo</p>
-                </div>
-
-                <div class="mail">
-                    <p>Modifier son adresse mail</p>
-                    <p>logo</p>
-                </div>
-
-            </div>
 
         </div>
     </div>

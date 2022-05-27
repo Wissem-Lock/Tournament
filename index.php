@@ -32,24 +32,23 @@
         <div class="rules">
             <i class="fa-solid fa-fingerprint"></i>
             <p><span>Création de compte</span></p>
-            <p>You can do it</p>
+
         </div>
         <div class="rules">
             <i class="fa-solid fa-gamepad"></i>
             <p><span>Choisi ton jeux</span></p>
-            <p>You can do it</p>
+
 
         </div>
         <div class="rules">
             <i class="fa-solid fa-circle-check"></i>
             <p><span>Inscription au tournoi</span></p>
-            <p>You can do it</p>
+
 
         </div>
         <div class="rules">
             <i class="fa-solid fa-burst"></i>
             <p><span>Participation au tournoi</span></p>
-            <p>You can do it</p>
 
         </div>
     </div>

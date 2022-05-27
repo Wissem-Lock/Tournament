@@ -49,7 +49,7 @@ $show_team = $query_select->fetchAll(PDO::FETCH_ASSOC);
         $team_win = ($team['win']);
         ?>
         <td><a href="team.php?equipe=<?=$team_name?>"> <?= $team_name ?></td></a>
-        <td><?= $team_chief ?></td>
+        <td><a href="player.php?player=<?= $team_chief?>"> <?= $team_chief ?></td></a>
         <td><?= $team_nb ?></td>
         <td><?= $team_win ?></td>
 

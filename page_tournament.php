@@ -31,7 +31,7 @@ $show_games = $query_games->fetchAll(PDO::FETCH_ASSOC);
             $id_game = htmlspecialchars($game['id']);
             $name_game = htmlspecialchars($game['name']);
             ?>
-        <a href="tournament.php?game=<?=$game['name'] ?>" <div class="card-tournament lol">
+        <a href="tournament.php?game=<?=$game['name'] ?>&number=<?=$game['id'] ?>" <div class="card-tournament lol">
 
             <?php   endforeach;
             ?>

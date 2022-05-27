@@ -44,7 +44,6 @@ if (isset($_POST['create_team'])){
                 $insert_team->bindParam('pseudo', $_SESSION['name'], PDO::PARAM_STR);
                 $insert_team->execute();
 
-                var_dump($team);
                 header('location: ./team.php?equipe='.$name);
             }
         }
@@ -66,6 +65,7 @@ if (isset($_POST['create_team'])){
 
 <section id="new-account">
     <div class="bloc-account">
+        <a href="index.php"><i class="fas fa-undo"></i></a>
         <h1>Créer votre équipe</h1>
         <form action="" method="post">
             <input type="text" name="name" placeholder="Nom de l'équipe">
@@ -75,5 +75,6 @@ if (isset($_POST['create_team'])){
 </section>
 
 
+<script src="https://kit.fontawesome.com/0065732943.js" crossorigin="anonymous"></script>
 </body>
 </html>

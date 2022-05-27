@@ -8,6 +8,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: Garamond;
 }
 
 body {
@@ -203,6 +204,7 @@ footer i:nth-child(1) {
     width: 500px;
     border-radius: 8px;
     margin: 0 auto;
+
 }
 
 .bloc-account i {
@@ -346,7 +348,21 @@ table {
     border-collapse: collapse;
     background-color:#c9b09a;
     border-radius: 5px;
+    text-align: center;
+}
 
+table th {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+table tr {
+    font-weight: bold;
+}
+
+table a {
+    text-decoration: none;
+    color:#6b43c1;
 }
 
 table, td, th {
@@ -370,7 +386,6 @@ table, td, th {
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    height: 100vh;
 }
 
 #profil h1 {
@@ -407,16 +422,15 @@ table, td, th {
 
 .delete_team {
     margin-left: 100px;
+    background-color:#fff;
+    padding: 12px;
+    position: relative;
+    bottom: -23px;
+    left: 13px;
+    border-radius: 12px;
+    font-weight: bold;
 }
 
-.modif-profil {
-    margin-top: 20px;
-}
-
-.mdp, .mail {
-    display: flex;
-    justify-content: space-around;
-}
 
 /* ***************************** PAGE PAGE_TOURNAMMENT ************************** */
 
@@ -507,15 +521,6 @@ table, td, th {
     padding-top:20px;
 }
 
-.arbre {
-    display: flex;
-    margin-top: 50px;
-}
-
-.left, .right {
-    width: 50%;
-}
-
 .input {
     display:flex;
     flex-direction: column;
@@ -541,3 +546,24 @@ table, td, th {
     cursor:pointer;
 }
 
+.inscrire {
+    background-color: #000 !important;
+}
+
+.arbre {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+
+
+.branche {
+    flex-basis: 40%;
+    background-color:#fff;
+    padding: 15px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 15px;
+}

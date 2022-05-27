@@ -17,6 +17,7 @@ endforeach;
 
 <?php
 
+// Créer un compte si les mots de passes correspondent et hash le mot de passe
 if (isset($_POST['create']) && !empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password_verify'])) {
     if (($_POST['password_verify']) === ($_POST['password'])) {
         $password = $_POST['password'];

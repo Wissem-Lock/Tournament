@@ -28,6 +28,7 @@
 
 <?php
 
+// Sélectionne les pseudo des joueurs et nom de team
 $query_team = $pdo->prepare("SELECT users.pseudo, team.name FROM users LEFT JOIN team ON users.team = team.id_team WHERE pseudo = :pseudo");
 $query_team->bindParam('pseudo', $_SESSION['name'], PDO::PARAM_STR);
 $query_team->execute();

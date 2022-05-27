@@ -2,7 +2,7 @@
 
 <?php
 
-
+// Redirige vers l'accueil si l'utilisateur n'est pas connecté
 if(empty($_SESSION['name'])){
 header('location: ./error404.php');
 die();
@@ -14,12 +14,14 @@ die();
 
 <?php
 
+// Selectionne toute les équipes
 $query_select = $pdo->query("SELECT name FROM team");
 $show_team = $query_select->fetchAll(PDO::FETCH_ASSOC);
 foreach ($show_team as $team):
     $name = $team['name'];
 endforeach;
 
+// Créer une équipe si le nom n'est pas déjà utilisé et l'affiche sur la page page_team
 if (isset($_POST['create_team'])){
     if($_POST['name'] === $name) {
             echo('Ce nom est déjà utilisé');

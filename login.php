@@ -4,6 +4,8 @@
 
 
 <?php
+
+// Sélectionne le pseudo si il se trouve dans la base de donnée puis compare le mot de passe avec le hash en base de donnée
 if (isset($_POST['submit'])) {
     if (isset($_POST['pseudo']) && isset($_POST['password'])) {
         /* Requete se connecter dans la bdd */

@@ -37,7 +37,8 @@
         <h1>Tournoi du xx/xx/xxxx</h1>
         <div class="arbre">
  <?php
- $game_id = $_GET['number'];
+
+        $game_id = $_GET['number'];
         $game_name = $_GET['game'];
 
 

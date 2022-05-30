@@ -15,6 +15,18 @@
 </head>
 <body>
 
+<?php
+
+$query_games = $pdo->prepare("SELECT description FROM games WHERE id = :id");
+$query_games->bindParam('id', $_GET['number'], PDO::PARAM_INT);
+$query_games->execute();
+$rows = $query_games->fetchAll();
+foreach ($rows as $row):
+    $description = $row['description'];
+endforeach;
+
+    ?>
+
 <?php include 'navbar.php' ?>
 
 
@@ -22,7 +34,7 @@
 
     <div class="description-tournament">
        <h1><?= $_GET['game'] ?></h1>
-        <p>Explication du jeux</p>
+        <p class="resume"><?= utf8_encode($description) ?></p>
 
         <?php
         if(!empty($_SESSION['name'])) { ?>

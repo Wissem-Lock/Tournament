@@ -3,7 +3,7 @@
 
 // Connection à la base de donnée
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=Tournament', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=', '', '');
  /*    foreach($pdo->query('SELECT * from users') as $row) {
 
     } */

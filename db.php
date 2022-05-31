@@ -3,7 +3,7 @@
 
 // Connection à la base de donnée
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=', '', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=[nomDeLaBdd]', '[nomDutilisateur]', '[motdepasse]');
  /*    foreach($pdo->query('SELECT * from users') as $row) {
 
     } */
